@@ -1,6 +1,10 @@
-import { createStore } from "redux";
-import { main } from "./reducers/main";
+import { configureStore } from "@reduxjs/toolkit";
+import dataSlice from "./reducers/dataSlice";
 
-const store = createStore(main);
+const store = configureStore({
+  reducer: {
+    dataSlice: dataSlice,
+  },
+});
 
 export default store;
