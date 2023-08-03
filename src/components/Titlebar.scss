@@ -1,9 +1,14 @@
 @import "../index";
 
+$height: 5rem;
+
 .titlebar {
+  position: sticky;
+  top: 0;
+  height: $height;
   min-width: 100%;
   padding: 1.3rem;
   background-color: var(--color-titlebar);
-  box-shadow: 1rem 0 3rem rgba(0, 0, 0, 0.25);
+  //box-shadow: 1rem 0 3rem rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(0.4rem);
 }

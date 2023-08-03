@@ -1,13 +1,18 @@
 import "./App.scss";
 import Titlebar from "./components/Titlebar";
-import { getColorScheme } from "./helper";
+import { getLightTheme } from "./helper";
+import MainTable from "./components/MainTable";
 
 function App() {
-  document.body.className = getColorScheme();
+  document.body.className = getLightTheme() ? "light" : "dark";
+  // document.body.className = "light";
+
+  console.log("-> getLightTheme", getLightTheme);
 
   return (
     <div className="app">
-      <Titlebar />
+      {/*<Titlebar />*/}
+      <MainTable />
     </div>
   );
 }

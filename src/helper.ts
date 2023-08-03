@@ -1,10 +1,6 @@
-export function getColorScheme(): "dark" | "light" {
-  if (
+export function getLightTheme(): boolean {
+  return (
     window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-  ) {
-    return "dark";
-  } else {
-    return "light";
-  }
+    !window.matchMedia("(prefers-color-scheme: dark)").matches
+  );
 }

@@ -1,0 +1,10 @@
+@import "./Titlebar";
+
+.main-table {
+  //background-color: red;
+  min-width: 100%;
+  //position: fixed;
+  //top: $height;
+  //margin-top: $height;
+  z-index: -1;
+}

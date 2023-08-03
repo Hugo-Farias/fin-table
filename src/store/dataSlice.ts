@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 export interface dataState {
   value: number;
@@ -18,8 +18,8 @@ const dataSlice = createSlice({
     decrement(state) {
       state.value -= 1;
     },
-    incrementByAmount(state, { action }: PayloadAction<dataState>) {
-      state.value += action.payload.value;
+    incrementByAmount(state, { payload }: number) {
+      state.value += payload;
     },
   },
 });

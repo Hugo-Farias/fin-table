@@ -7,7 +7,7 @@ declare namespace NodeJS {
      *
      * ```tree
      * ├─┬─┬ dist
-     * │ │ └── index.html
+     * │ │ └── store.html
      * │ │
      * │ ├─┬ dist-electron
      * │ │ ├── main.js
@@ -15,8 +15,8 @@ declare namespace NodeJS {
      * │
      * ```
      */
-    DIST: string
+    DIST: string;
     /** /dist/ or /public/ */
-    PUBLIC: string
+    PUBLIC: string;
   }
 }

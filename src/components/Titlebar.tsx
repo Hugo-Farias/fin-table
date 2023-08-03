@@ -1,9 +1,11 @@
 import "./Titlebar.scss";
-import { useSelector } from "react-redux";
-import { dataSliceState } from "../types";
+import { useDispatch, useSelector } from "react-redux";
+import { increment } from "../store/dataSlice";
+import { AppDispatch, RootState } from "../store/store";
 
 const Titlebar = function () {
-  const data = useSelector((state: dataSliceState) => state.dataSlice.value);
+  const data = useSelector((state: RootState) => state.dataSlice.value);
+  const dispatch: AppDispatch = useDispatch();
 
   console.log(data);
 
@@ -14,7 +16,7 @@ const Titlebar = function () {
 
   return (
     <div className="titlebar" onClick={clickHandler}>
-      <h1>TitleBar</h1>
+      <h1 onClick={() => dispatch(increment())}>{data}</h1>
     </div>
   );
 };
