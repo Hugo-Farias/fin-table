@@ -1,7 +1,9 @@
 import "./MainTable.scss";
-import { formatDate } from "../helper";
+// import { DataTable } from "primereact/datatable";
+// import { Column } from "primereact/column";
 import { Bill } from "../types";
 import dummy from "../data/DUMMY_DATA.json";
+import "primereact/resources/themes/md-dark-indigo/theme.css";
 
 const categories = [
   { cName: "select", content: <input type="checkbox" /> },
@@ -17,37 +19,23 @@ const categories = [
 const MainTable = function () {
   const products: Bill[] = dummy;
 
-  // const day = products.map((v) => {
-  //   return v.day;
+  // const cNameJSX = categories.map((v, i) => {
+  //   return (
+  //     <div key={i} className={`c-name ${v.cName}`}>
+  //       {v.content}
+  //     </div>
+  //   );
   // });
 
-  // console.log(formatDate(day[3], ["year", "month", "day"]));
+  // const header = <div className="columns">{cNameJSX}</div>;
 
-  const cNameJSX = categories.map((v, i) => {
-    return (
-      <div key={i} className={`c-name ${v.cName}`}>
-        {v.content}
-      </div>
-    );
-  });
-
-  const tableContentsJSX = categories.map((v, i) => {
-    const out = products.map((pv, pi) => {
-      const content = pv[v.cName] ? pv[v.cName] : v.content;
-
-      return (
-        <div key={pi} className={`c-name ${v.cName}`}>
-          {content}
-        </div>
-      );
-    });
-    return <div className={`c-name ${v.cName}`}>{out}</div>;
-  });
+  // const columns = categories.map((v, i) => {
+  //   return <Column></Column>
+  // });
 
   return (
     <div className="main-table">
-      <div className="columns">{cNameJSX}</div>
-      <div className="table-contents">{tableContentsJSX}</div>
+      {/*<div className="columns">{cNameJSX}</div>*/}
     </div>
   );
 };
