@@ -17,11 +17,11 @@ const categories = [
 const MainTable = function () {
   const products: Bill[] = dummy;
 
-  // const day = products.map((v) => {
-  //   return v.day;
-  // });
+  const day = products.map((v) => {
+    return formatDate(v.day, ["day", "day", "day"]);
+  });
 
-  // console.log(formatDate(day[3], ["year", "month", "day"]));
+  // console.log(day);
 
   const cNameJSX = categories.map((v, i) => {
     return (
@@ -33,7 +33,14 @@ const MainTable = function () {
 
   const tableContentsJSX = categories.map((v, i) => {
     const out = products.map((pv, pi) => {
-      const content = pv[v.cName] ? pv[v.cName] : v.content;
+      const category = v.cName;
+      const product = pv[v.cName];
+      let content = product ? product : v.content;
+
+      if (category === "day") {
+        console.log(formatDate(content, ["year", "month", "day"]));
+        content = new Date(content).getDate();
+      }
 
       return (
         <div key={pi} className={`c-name ${v.cName}`}>

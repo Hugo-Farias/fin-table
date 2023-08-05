@@ -19,7 +19,7 @@
     }
 
     &.description {
-      flex-grow: 4;
+      flex-grow: 5;
     }
   }
 }
@@ -35,6 +35,10 @@
   & > .columns {
     background-color: var(--color-titlebar);
     display: flex;
+    position: fixed;
+    margin-top: -3rem;
+    width: 100%;
+    backdrop-filter: blur(0.4rem);
     //justify-content: space-between;
     font-size: 1.2rem;
     border-bottom: 1px solid rgba(gray, 0.2);
@@ -44,7 +48,14 @@
   }
 
   & > .table-contents {
+    margin-top: 3rem;
     display: flex;
+    font-size: 1.5rem;
+    //background-color: red;
     @include columnsAndContent();
+
+    & > .c-name {
+      padding-block: 20rem;
+    }
   }
 }
