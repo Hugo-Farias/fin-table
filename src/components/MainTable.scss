@@ -26,25 +26,20 @@
 
 .main-table {
   //background-color: red;
-  //min-width: 100%;
+  min-width: 100%;
   //position: fixed;
   //top: $height;
   //margin-top: $height;
   z-index: -1;
+  font-size: 1.2rem;
 
-  & > .columns {
+  & > thead {
+    padding: 1rem;
     background-color: var(--color-titlebar);
-    display: flex;
-    //justify-content: space-between;
-    font-size: 1.2rem;
-    border-bottom: 1px solid rgba(gray, 0.2);
-    //font-weight: 700;
-
-    @include columnsAndContent();
+    //border-bottom: 1px solid rgba(gray, 0.2);
   }
-
-  & > .table-contents {
-    display: flex;
-    @include columnsAndContent();
-  }
+  //
+  //& > .table-contents {
+  //  display: flex;
+  //}
 }
