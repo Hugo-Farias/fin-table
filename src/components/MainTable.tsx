@@ -18,10 +18,10 @@ const MainTable = function () {
   const products: Bill[] = dummy;
 
   const day = products.map((v) => {
-    return formatDate(v.day, ["day", "day", "day"]);
+    return formatDate(v.day, ["year", "month", "day"]);
   });
 
-  // console.log(day);
+  console.log(day);
 
   const cNameJSX = categories.map((v, i) => {
     return (
