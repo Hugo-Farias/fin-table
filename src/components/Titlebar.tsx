@@ -7,8 +7,6 @@ const Titlebar = function () {
   const data = useSelector((state: RootState) => state.dataSlice.value);
   const dispatch: AppDispatch = useDispatch();
 
-  console.log(data);
-
   const clickHandler = function () {
     document.body.className =
       document.body.className === "light" ? "dark" : "light";
