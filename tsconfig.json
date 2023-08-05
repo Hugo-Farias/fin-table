@@ -3,15 +3,8 @@
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "types": [
-      "vite/client",
-      "react",
-      "react-dom",
-      "@types/node",
-      "@types/react"
-    ],
     "module": "ESNext",
-    "skipLibCheck": true,
+    "skipLibCheck": false,
 
     /* Bundler mode */
     "moduleResolution": "bundler",

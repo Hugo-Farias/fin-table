@@ -7,11 +7,9 @@ function App() {
   document.body.className = getLightTheme() ? "light" : "dark";
   // document.body.className = "light";
 
-  console.log("-> getLightTheme", getLightTheme);
-
   return (
     <div className="app">
-      {/*<Titlebar />*/}
+      <Titlebar />
       <MainTable />
     </div>
   );

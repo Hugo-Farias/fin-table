@@ -1,10 +1,32 @@
+@import "../index";
 @import "./Titlebar";
 
 .main-table {
   //background-color: red;
-  min-width: 100%;
+  //min-width: 100%;
   //position: fixed;
   //top: $height;
   //margin-top: $height;
   z-index: -1;
+
+  & > .columns {
+    background-color: var(--color-titlebar);
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    & > .c-name {
+      flex-basis: 10rem;
+      &.day {
+        flex-basis: unset;
+      }
+      &.name {
+        background-color: red;
+        //max-width: 10rem;
+        //flex-basis: 25rem;
+      }
+      &.description {
+        flex-basis: 30rem;
+      }
+    }
+  }
 }
