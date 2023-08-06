@@ -2,24 +2,22 @@
 @import "./Titlebar";
 
 @mixin columnsAndContent {
-  & > .c-name {
+  .c-name {
     padding: 1rem;
     flex-basis: 10rem;
 
     &.select {
-      flex-basis: unset;
+      width: 0.5rem;
     }
 
     &.day {
-      flex-basis: unset;
+      width: 0.5rem;
     }
 
     &.name {
-      flex-grow: 1;
     }
 
     &.description {
-      flex-grow: 4;
     }
   }
 }
@@ -33,10 +31,29 @@
   z-index: -1;
   font-size: 1.2rem;
 
+  table {
+    //border: none;
+    border-collapse: collapse;
+  }
+
   & > thead {
-    padding: 1rem;
+    @include columnsAndContent();
+    & > tr > th {
+      //background-color: red;
+      padding: 0.5rem;
+      border-collapse: collapse;
+      text-align: left;
+    }
     background-color: var(--color-titlebar);
     //border-bottom: 1px solid rgba(gray, 0.2);
+  }
+
+  & > tbody {
+    & > tr {
+      & > td {
+        //background-color: red;
+      }
+    }
   }
   //
   //& > .table-contents {

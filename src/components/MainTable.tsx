@@ -37,7 +37,11 @@ const MainTable = function () {
       const val = v[cv.header];
       const content = val ? val : cv.accessor;
 
-      return <td key={ci}>{content}</td>;
+      return (
+        <td key={ci} className={cv.header}>
+          {content}
+        </td>
+      );
     });
 
     return <tr key={i}>{out}</tr>;
@@ -48,7 +52,9 @@ const MainTable = function () {
       <thead className="head">
         <tr>
           {categories.map((v, i) => (
-            <th key={i}>{v.accessor}</th>
+            <th key={i} className={`c-name ${v.header}`}>
+              {v.accessor}
+            </th>
           ))}
         </tr>
       </thead>
